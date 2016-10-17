@@ -6,11 +6,40 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>A somewhat decent calculator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <form name="calculator" method="post" action="/">
+            <input type="text" id="display" name="display" placeholder="0">
+                <br>
+                    <input class="button" type="button" value="7" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="8" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="9" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="/" onclick="UpdateDisplay(this.value)">
+                <br>
+                    <input class="button" type="button" value="4" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="5" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="6" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="*" onclick="UpdateDisplay(this.value)">
+                <br>
+                    <input class="button" type="button" value="1" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="2" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="3" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="+" onclick="UpdateDisplay(this.value)">
+                <br>
+                    <input class="button" type="submit" value="=" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="0" onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="." onclick="UpdateDisplay(this.value)">
+                    <input class="button" type="button" value="-" onclick="UpdateDisplay(this.value)">
+	</form>
+        <script>
+            var string = "";
+                function UpdateDisplay(value) {
+                    string += value;
+                    document.getElementById("display").value = string;
+                }
+        </script>
     </body>
 </html>
