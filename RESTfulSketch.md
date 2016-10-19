@@ -14,3 +14,9 @@ An additional part of the REST architecture is the implementation of caching. Th
 In conclusion to make my own project truly RESTful I would need to add dynamic URLs through which the results of the calculation are accessed, most easily achieved by appending said calculation to the end of my URL. This would create specific, unique addresses for my resources. Additionally I would need to implement caching for calculations that are often requested so that my application can scale easier when under heavy load.
 
 The resources used in my personal calculator project would be the http://localhost:8383/index.html which is the base calculator. Any results to calculations would be exposed through http://localhost:8383/index/1-9+-*1-9... . This would give each result a unique URL that can be easily constructed by the code and also easily cached.
+
+PAST-DEADLINE UPDATE:
+
+I recently read the update from Mr Steffens on how a single GET is not sufficient because it's not a resource-centric way of working. As a result my earlier stated solution of appending calculations to the URL and using those within our logic is not truly RESTful.
+
+Instead it would then be preferable to have the client POST the string of our calculation to a URL. The results can then be returned to the client by including them in the 200-range response code or/and through a GET on our specific resource that is created during the server-side calculation (the client does not get to  decide the ID of this resource so we can more easily use it within our system).
